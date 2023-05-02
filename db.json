@@ -37,7 +37,7 @@
       "weight": "6lbs",
       "personality": "Happy",
       "healthStatus": "healthy",
-      "AvailabilityStatus":"Available",
+      "AvailabilityStatus": "Available",
       "image": "https://m.media-amazon.com/images/I/71kNvlpS9GL._SY355_.jpg",
       "id": 4
     },
@@ -64,7 +64,7 @@
       "weight": "50lbs",
       "personality": "Loyal",
       "healthStatus": "Healthy",
-      "AvailabilityStatus": "Available",
+      "AvailabilityStatus": "not available already bought",
       "image": "https://cdn.britannica.com/67/197567-050-DA8E36D5/Scottish-fold-cat-feline.jpg",
       "liked": false
     },
@@ -227,7 +227,7 @@
       "AvailabilityStatus": "Available",
       "image": "https://img.freepik.com/premium-photo/beautiful-cool-british-hipster-cat-with-vintage-round-sunglasses-studio_338491-12631.jpg?w=2000"
     },
-     {
+    {
       "id": 19,
       "name": "Cooper",
       "breed": "Cat",
@@ -240,7 +240,7 @@
       "AvailabilityStatus": "Available",
       "image": "https://www.unigreet.com/wp-content/uploads/2023/03/Cute-Cat-Whatsapp-Dp-HD.jpg"
     },
-     {
+    {
       "id": 20,
       "name": "Hollar",
       "breed": "Bird",
@@ -252,9 +252,8 @@
       "healthStatus": "neutered",
       "AvailabilityStatus": "Available",
       "image": "https://w0.peakpx.com/wallpaper/706/131/HD-wallpaper-sunny-little-parrot-cute-bird-green-yellow-parrot.jpg"
-    }
-    ,
-     {
+    },
+    {
       "id": 20,
       "name": "Minnie",
       "breed": "Dog",
@@ -267,6 +266,5 @@
       "AvailabilityStatus": "Available",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1200x630_center,f_auto,q_auto:best/newscms/2019_03/1403289/boo-worlds-cutest-dog-today-190119-main-01.jpg"
     }
-
   ]
 }
