@@ -1,14 +1,16 @@
 
 import React,{useState,useEffect} from "react"
 import { Link } from 'react-router-dom';
-import AddAnimal from "./AddAnimal";
+import AddAnimal from "./AddAnimal"
 import Search from "./Search";
 import UpdateAnimal from "./UpdateAnimal";
+
 
 function Home(){
   const [animals,setAnimals] = useState([])
   const [totalLikes,setTotalLikes] =useState(0)
   const[selectedBreed,setSelectedBreed]= useState("All")
+
   const allBreeds=[
     "Dog",
     "Cat",
@@ -19,7 +21,7 @@ function Home(){
 ]
 
  
-const [animalToUpdate, setAnimalToUpdate] = useState("");
+//const [animalToUpdate, setAnimalToUpdate] = useState("");
   
   useEffect(()=>{
 fetch(" http://localhost:3000/animals")
@@ -48,9 +50,9 @@ fetch(`http://localhost:3000/animals/${id}`,{
     )
   }
 
-    function handleUpdate(animal) {
-   setAnimalToUpdate(animal);
-   }
+  //   function handleUpdate(animal) {
+  //  setAnimalToUpdate(animal);
+  //  }
   //on line 41 we are displaying the number of total likes
   function fetchSearch(search){
 const results=animals.filter(animal=>animal.name === search)
@@ -123,6 +125,7 @@ function handleBreed(e){
             <h3>SIZE: {animal.size}</h3>
             <h3>WEIGHT: {animal.weight}</h3>
             <h3>PERSONALITY: {animal.personality}</h3>
+            <h3>HEALTH:{animal.healthStatus}</h3>
             <h3>STATUS: {animal.AvailabilityStatus}</h3>
             <button type="submit" onClick={() => handleBuy(animal.id)}>
               Buy
@@ -130,19 +133,16 @@ function handleBreed(e){
             <button onClick={() => handleLike(animal.id)}>{likeButton}</button>
             <p>{totalLikes[animal.id] || 0} likes</p>
             <button onClick={() => handleDelete(animal.id)}>DELETE</button>
-            <button onClick={()=> handleUpdate(animal)}
-            
-            >UPDATE</button>
+         <UpdateAnimal animals={animal} setAnimals={setAnimals} />
+
           </div>
         );
       })}
   </div>
-<UpdateAnimal
-animals={animals}
-setAnimals={setAnimals}
-UpdateAnimal={UpdateAnimal}
-/>
-  <AddAnimal animals={animals} setAnimals={setAnimals} />
+
+  <AddAnimal animals={animals} setAnimals={setAnimals}/>
+  
+
   <footer>All rights reserved@2023</footer>
 </div>
 );
