@@ -1,0 +1,110 @@
+
+img{
+  height: 500px;
+  width: 500px;
+}
+
+header{
+  text-align: center;
+  background-color:#222;
+  font-size: 80px;
+  color: #fff;
+}
+
+footer{
+    text-align: center;
+    background-color: #222;
+    font-size: 50px;
+    color: #fff;
+}
+
+.search{
+  float: right;
+}
+
+/* Styles for animal cards */
+.animal-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+}
+
+.animal-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.animal-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.animal-card p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Styles for grid layout */
+.animal-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .animal-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.animal-form {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.animal-form h5 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.animal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.animal-form input[type="text"],
+.animal-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.animal-form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.animal-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+.animal-container{
+  display: grid;
+  grid-template-rows: repeat(auto, 240px);
+  grid-template-columns: repeat(5, 240px);
+  gap:1% 1%;  
+  padding: 2%;
+}
