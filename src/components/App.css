@@ -108,3 +108,18 @@ footer{
   gap:1% 1%;  
   padding: 2%;
 }
+.filter{
+  font-size: 40px;
+  font-weight: 1000px;
+}
+.select{
+  width: 15%;
+  background-color: #4caf50;
+}
+.search{
+  width: 100%;
+  background-color:#5c5757;
+}
+.submit{
+  background-color: #222;
+}

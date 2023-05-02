@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function UpdateAnimal({ animals, setAnimals, onUpdate }) {
+
+function UpdateAnimal({ animals, setAnimals}) {
   const [formData, setFormData] = useState({
     name: animals.name,
     breed: animals.breed,
@@ -28,7 +29,7 @@ function UpdateAnimal({ animals, setAnimals, onUpdate }) {
         setAnimals((prevAnimals) =>
           prevAnimals.map((animal) => (animal.id === data.id ? data : animal))
         );
-        onUpdate();
+        
       });
   }
 
