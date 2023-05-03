@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from 'react-router-dom'
+import Comment from "./Comment";
 function Contacts(){
   return(
     <div className="contact">
@@ -8,6 +9,7 @@ function Contacts(){
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About Us</Link></li>
 </ul>
+<Comment/>
     </div>
   )
 }

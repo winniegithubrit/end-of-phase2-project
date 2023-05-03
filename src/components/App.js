@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import About from './About';
 import Contacts from './Contacts';
+
 function App() {
   return (
     <div className="App">
@@ -12,8 +13,10 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contacts" component={Contacts} />
+          
         </Switch>
       </Router>
+      
     </div>
   );
 }

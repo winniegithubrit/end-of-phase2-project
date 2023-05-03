@@ -31,7 +31,9 @@ footer{
   text-align: center;
   background-color: #222;
   color: #fff;
+  
 }
+
 
 .animal-card img {
   height: 200px;
@@ -159,4 +161,84 @@ footer{
 
 .update-form input[type="submit"]:hover {
   background-color: #f44336;
+}
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+  background-color: #f44336;
+}
+.comment {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+.comment label,
+.comment input {
+  margin-bottom: 10px;
+}
+
+/* Using media queries to adjust the layout and styling of the form based on the screen size */
+@media (max-width: 768px) {
+  .comment {
+    flex-direction: column;
+  }
+
+  .comment label,
+  .comment input {
+    width: 100%;
+  }
+}
+.update-container {
+  background-color: #494545;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #fff;
+  color: black;
+}
+
+button[type="submit"] {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #b5070f;
+}
+
+@media (max-width: 600px) {
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
 }

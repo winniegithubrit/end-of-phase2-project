@@ -115,7 +115,81 @@
 // }
 
 // export default UpdateAnimal;
-import React, { useState } from "react";
+// import React, { useState } from "react";
+
+// function UpdateAnimal({ animals, setAnimals }) {
+//   const [formData, setFormData] = useState({
+//     name: animals.name,
+//     breed: animals.breed,
+//     age: animals.age,
+//     gender: animals.gender,
+//     size: animals.size,
+//     weight: animals.weight,
+//     personality: animals.personality,
+//     healthStatus: animals.healthStatus,
+//     availabilityStatus: animals.availabilityStatus,
+//     image: animals.image,
+//   });
+
+//   function handleSubmit(updatedData) {
+//     fetch(`http://localhost:3000/animals/${animals.id}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(updatedData),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setAnimals((prevAnimals) =>
+//           prevAnimals.map((animal) => (animal.id === data.id ? data : animal))
+//         );
+//         setFormData(data)
+//       });
+//   }
+
+//   function handleUpdateClick(id) {
+//     const name = prompt("Enter name");
+//     const breed = prompt("Enter breed");
+//     const age = prompt("Enter age");
+//     const gender = prompt("Enter gender");
+//     const size = prompt("Enter size");
+//     const weight = prompt("Enter weight");
+//     const personality = prompt("Enter personality");
+//     const healthStatus = prompt("Enter health status");
+//     const AvailabilityStatus = prompt("Enter the availabilityStatus")
+//     const image=prompt("Enter the image url");
+
+//     const updatedData = {
+//       ...formData,
+//       name,
+//       breed,
+//       age,
+//       gender,
+//       size,
+//       weight,
+//       personality,
+//       healthStatus,
+//       AvailabilityStatus,
+//       image,
+      
+//     };
+
+//     handleSubmit(updatedData);
+//   }
+
+//   return (
+//     <div className="update-container">
+//       <button className="updating" onClick={()=> handleUpdateClick(animals.id)}>
+//         UPDATE
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default UpdateAnimal;
+
+import React, { useState ,useEffect} from "react";
 
 function UpdateAnimal({ animals, setAnimals }) {
   const [formData, setFormData] = useState({
@@ -131,61 +205,142 @@ function UpdateAnimal({ animals, setAnimals }) {
     image: animals.image,
   });
 
-  function handleSubmit(updatedData) {
+   useEffect(() => {
+    setFormData({
+      name: animals.name,
+      breed: animals.breed,
+      age: animals.age,
+      gender: animals.gender,
+      size: animals.size,
+      weight: animals.weight,
+      personality: animals.personality,
+      healthStatus: animals.healthStatus,
+      availabilityStatus: animals.availabilityStatus,
+      image: animals.image,
+    });
+  }, [animals]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
     fetch(`http://localhost:3000/animals/${animals.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedData),
+      body: JSON.stringify(formData),
     })
       .then((response) => response.json())
       .then((data) => {
         setAnimals((prevAnimals) =>
-          prevAnimals.map((animal) => (animal.id === data.id ? data : animal))
+          prevAnimals.map((a) => (a.id === data.id ? data : a))
         );
-        setFormData(data)
       });
   }
 
-  function handleUpdateClick(id) {
-    const name = prompt("Enter name");
-    const breed = prompt("Enter breed");
-    const age = prompt("Enter age");
-    const gender = prompt("Enter gender");
-    const size = prompt("Enter size");
-    const weight = prompt("Enter weight");
-    const personality = prompt("Enter personality");
-    const healthStatus = prompt("Enter health status");
-    const AvailabilityStatus = prompt("Enter the availabilityStatus")
-    const image=prompt("Enter the image url");
-
-    const updatedData = {
-      ...formData,
-      name,
-      breed,
-      age,
-      gender,
-      size,
-      weight,
-      personality,
-      healthStatus,
-      AvailabilityStatus,
-      image,
-      
-    };
-
-    handleSubmit(updatedData);
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   }
+
 
   return (
     <div className="update-container">
-      <button className="updating" onClick={()=> handleUpdateClick(animals.id)}>
-        UPDATE
-      </button>
+      <form className="form">
+        <h1>UPDATE ANIMAL HERE</h1>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Breed:
+          <input
+            type="text"
+            name="breed"
+            value={formData.breed}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Age:
+          <input
+            type="text"
+            name="age"
+            value={formData.age}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Gender:
+          <input
+            type="text"
+            name="gender"
+            value={formData.gender}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Size:
+          <input
+            type="text"
+            name="size"
+            value={formData.size}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Weight:
+          <input
+            type="text"
+            name="weight"
+            value={formData.weight}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Personality:
+          <input
+            type="text"
+            name="personality"
+            value={formData.personality}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Health status:
+          <input
+            type="text"
+            name="healthStatus"
+            value={formData.healthStatus}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Availability status:
+          <input
+            type="text"
+            name="availabilityStatus"
+            value={formData.availabilityStatus}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
+          Image URL:
+          <input
+            type="text"
+            name="image"
+            value={formData.image}
+            onChange={handleInputChange}
+          />
+        </label>
+       <button className="submit" onClick={handleSubmit}>ENTER</button>
+      </form>
     </div>
   );
 }
 
 export default UpdateAnimal;
-
