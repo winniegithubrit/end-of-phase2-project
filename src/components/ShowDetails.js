@@ -1,9 +1,9 @@
 import React,{useState} from "react"
-import { Link } from 'react-router-dom';
-import './App.css';
-function AddAnimal({animals,setAnimals}){
-  // set initial state for form data using the useState hook
-  const [formData,setFormData]=useState({
+//imported the useParams 
+import { useParams,Link } from "react-router-dom/cjs/react-router-dom.min"
+function ShowDetails(){
+   // set initial state for form data using the useState hook
+   const [formData,setFormData]=useState({
     name:"",
     breed:"",
     age:"",
@@ -16,12 +16,13 @@ function AddAnimal({animals,setAnimals}){
     image:"",
     likes:""
   })
-  
-  // function to handle form submission
+  const {id}=useParams()
+  console.log(id)
+   // function to handle form submission
   function handleSubmit(e){
-e.preventDefault();
-// create a new animal object using the form data
-const newAnimal ={
+      e.preventDefault()
+      // creating a new animal object using the form data
+      const newAnimal ={
   name:formData.name,
   breed:formData.breed,
   age:formData.age,
@@ -34,9 +35,9 @@ const newAnimal ={
   image:formData.image,
   likes:formData.likes,
 };
-// send a POST request to the server with the new animal data
-fetch("http://localhost:3000/animals",{
-  method:"POST",
+// send a Put request to the server with the new animal data
+      fetch(`http://localhost:3000/animals/${id}`,{
+  method:"PUT",
   headers: {
     "Content-Type":"application/json",
   },
@@ -44,37 +45,19 @@ fetch("http://localhost:3000/animals",{
 })
 .then((response)=>response.json())
 .then((data)=>{
-   // add the new animal to the list of animals using the setAnimals function
-  setAnimals([...animals,data]);
-   // reset the form data to empty strings
-  setFormData({
-     name:"",
-    breed:"",
-    age:"",
-    gender:"",
-    size:"",
-    weight:"",
-    personality:"",
-    healthStatus:"",
-    AvailabilityStatus:"",
-    image:"",
-    likes:"",
-
-  })
+  console.log(data)
 })
   }
-  console.log(formData)
-  return(
-
   // display the form with input fields and a submit button
-    <div className="add-animal">
+  return(
+    <div>
        <nav>
-        <Link to="/about">About</Link>
+        <Link to="/about">About Us</Link>
         <Link to="/contacts">Contact Us</Link>
         <Link to="/home">Home</Link>
         </nav>
-<form className="animal-form">
-  <h5>ADD-ANIMAL-HERE</h5>
+<form className="animal-form" onSubmit={handleSubmit}>
+  <h5>UPDATE ANIMAL </h5>
   <br/>
   <label type="text">name:</label>
   <input type="text" id="name" value={formData.name} onChange={(e)=>setFormData({...formData,name:e.target.value})}/>
@@ -102,9 +85,9 @@ fetch("http://localhost:3000/animals",{
   <input type="img" id="image" value={formData.image} onChange={(e)=>setFormData({...formData,image:e.target.value})}/>
    <label type="text">likes:</label>
   <input type="likes" id="likes" value={formData.likes} onChange={(e)=>setFormData({...formData,likes:e.target.value})}/>
-  <button type="submit" onClick={handleSubmit}>ADD-ANIMAL</button>
+  <button type="submit" onClick={handleSubmit}>UPDATE-ANIMAL</button>
 </form>
     </div>
   )
 }
-export default AddAnimal
+export default ShowDetails

@@ -15,19 +15,18 @@
       "likes": 1
     },
     {
-      "id": 3,
-      "name": "Fluffy",
-      "breed": "Dog",
-      "age": "3 years",
+      "name": "Wendy",
+      "breed": "Cat",
+      "age": "2",
       "gender": "Female",
-      "size": "Small",
-      "weight": "6lbs",
-      "personality": "Friendly",
+      "size": "2",
+      "weight": "22lbs",
+      "personality": "Very friendly and smiley",
       "healthStatus": "Healthy",
-      "AvailabilityStatus": "not available already bought",
-      "image": "https://www.thekennelclub.org.uk/media/5094/husky-puppy.jpg?mode=crop&width=800&height=600&rnd=132957079670000000",
-      "likes": 5,
-      "disabled": true
+      "AvailabilityStatus": "Available",
+      "image": "https://imageservice.disco.peacocktv.com/uuid/09021e64-1b56-3419-ade6-2c6b8a91e84f/SCENE_3_4?language=eng&territory=US&version=b599eab3-c2c9-3dc0-b39c-a673d095000f",
+      "likes": "2",
+      "id": 3
     },
     {
       "name": "nathalie",
@@ -55,7 +54,7 @@
       "healthStatus": "Healthy",
       "AvailabilityStatus": "Available",
       "image": "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk2NzIzMTQ2NzMxMTAzMjUw/11-dogs-like-german-shepherd.png",
-      "likes": 2
+      "likes": 6
     },
     {
       "id": 6,
@@ -67,9 +66,9 @@
       "weight": "50lbs",
       "personality": "Loyal",
       "healthStatus": "Healthy",
-      "AvailabilityStatus": "not available already bought",
+      "AvailabilityStatus": "Available",
       "image": "https://cdn.britannica.com/67/197567-050-DA8E36D5/Scottish-fold-cat-feline.jpg",
-      "likes": 2
+      "likes": 7
     },
     {
       "id": 7,
@@ -83,7 +82,7 @@
       "healthStatus": "Healthy",
       "AvailabilityStatus": "Available",
       "image": "https://cdn.cdnparenting.com/articles/2021/09/22115215/1411747946.webp",
-      "likes": 0
+      "likes": 3
     },
     {
       "id": 8,
@@ -111,7 +110,7 @@
       "healthStatus": "Up to date on shots, healthy",
       "AvailabilityStatus": "Available",
       "image": "https://www.cuded.com/wp-content/uploads/2013/06/45-Bunny-Picture.jpg",
-      "likes": 0
+      "likes": 5
     },
     {
       "id": 10,
@@ -237,7 +236,7 @@
       "healthStatus": "Vaccinated and neutered",
       "AvailabilityStatus": "Available",
       "image": "https://img.freepik.com/premium-photo/beautiful-cool-british-hipster-cat-with-vintage-round-sunglasses-studio_338491-12631.jpg?w=2000",
-      "likes": 4
+      "likes": 8
     },
     {
       "id": 19,
@@ -265,7 +264,7 @@
       "healthStatus": "neutered",
       "AvailabilityStatus": "Available",
       "image": "https://w0.peakpx.com/wallpaper/706/131/HD-wallpaper-sunny-little-parrot-cute-bird-green-yellow-parrot.jpg",
-      "likes": 2
+      "likes": 6
     },
     {
       "id": 20,

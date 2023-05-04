@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# finalproject
+# PET KINGDOM PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Scenario
+There's a company called pet kingdom ltd. This is a company that houses a variety of pets. There is a high demand for pets from the public and the company wants to start selling some of their animals to the public. But inorder to achieve this, they require a web application.
 
-## Available Scripts
+# Deliverables
 
-In the project directory, you can run:
+# CRUD(create,read,update,delete)
+Users should be able to see,add,update or Delete an animal.
+-All the animals should be displayed together with their details.
+# ADD ANIMALS
+-there should be a form that a user fills inorder to add an animal to the list being displayed already. The newly added animal appears below as the last item.
+# DELETE BUTTON
+-Under each animal card, there should be a delete button below. When a user clicks on it, the animal is deleted.
+# UPDATE FUNCTIONALITY
+-Under each card there is a showmore link that takes one to the update form where the user is able to update the existing details of the animals
 
-### `npm start`
+# Buy an animal
+There is a button to buy the animals when the button is clicked the card gets disabled hence no one is able to buy the animal again and also the availability status of the animal changes from available to not available hence the user cant buy the animal again 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Search button and the filter by breed method
+Users can be able to search for an animal by using the name of the animal.
+# FILTER ANIMALS BY BREED
+It is also possible to filter by breed whereby users can click on the dropdown  to see the different breeds present. eg, On the drop down when a user selects dog, they will get results and will see the different breeds of dogs there is in the web application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Like buuton
+There will be a like button, whereby users will be able to click on it to like: This will help the company when making their reviews.
+# NAVIGATION BAR
+Here there are the different pages of our web app one is able to navigate to the homepage,about page ,contact us page update form page and also add animal page
+# CONTRIBUTORS
+the contributors to the project were 
+Daniel Muiruri    and    Winnie Jomo.
+# ###REACT PROJECT NO 1

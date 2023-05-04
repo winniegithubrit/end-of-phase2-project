@@ -1,12 +1,15 @@
 import React,{useState,useEffect} from "react"
 import { Link } from 'react-router-dom';
-import AddAnimal from "./AddAnimal"
 import Search from "./Search";
-import UpdateAnimal from "./UpdateAnimal";
 
+//the home function that acts as a container for the delete functionality,search functionality
+//filter by breed functionality,likes functionality and also the dark and light mode functionality
 function Home(){
+  //setting the states to be used for breed,mode...
   const [animals,setAnimals] = useState([])
   const[selectedBreed,setSelectedBreed]= useState("All")
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  //creating an array of breeds available
   const allBreeds=[
     "Dog",
     "Cat",
@@ -30,7 +33,11 @@ function Home(){
         )
       )
   }, [])
-
+  //this the function that handles the toggle dark and light mode
+ const handleToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  //the function that handles the delete functionality per animal card thats why we have specified the id
   function handleDelete(id){
     fetch(`http://localhost:3000/animals/${id}`,{
       method:"DELETE",
@@ -39,12 +46,12 @@ function Home(){
       setAnimals(animals.filter((animal)=> animal.id !== id))
     })
   }
-  
+  //the function that handles the search functionality
   function fetchSearch(search){
     const results=animals.filter(animal=>animal.name === search)
     setAnimals(results)
   }
-  
+  //the function that handles the buying functionality it sends a patch request then changes the availability status of the animal to not available when the animal is bought
   function handleBuy(id) {
     const animal = animals.find(animal => animal.id === id);
 
@@ -56,6 +63,7 @@ function Home(){
       body: JSON.stringify({
         ...animal,
         AvailabilityStatus: "not available already bought",
+        //here this enables the card to get disabled when it is clicked
         disabled:true,
       })
     })
@@ -66,6 +74,7 @@ function Home(){
           return {
             ...animal,
             AvailabilityStatus: data.AvailabilityStatus,
+            //enables card disabling
             disabled:true,
           };
         } else {
@@ -74,6 +83,8 @@ function Home(){
       }));
     })
   }
+  //function that handles the like button it sends a patch request to the server and whenever the like 
+  //button is clicked the likes update themselves in the backend 
   function handleLike(id) {
     const animal = animals.find((animal) => animal.id === id);
 
@@ -103,7 +114,7 @@ function Home(){
         );
       });
   }
-  
+  //here this is the handle breed function 
   function handleBreed(e){
     setSelectedBreed(e.target.value)
   }
@@ -111,9 +122,26 @@ function Home(){
   return(
     <div className="home-animal-card" >
       <header> THE PET KINGDOM </header>
+      {/* toggle mode functionality */}
+      <div className={`app ${isDarkMode ? "dark" : "light"}`}>
+      <div className="toggle-container">
+        <label className="switch">
+          <input type="checkbox" checked={isDarkMode} onChange={handleToggle} />
+          <span className="slider round"></span>
+        </label>
+        <nav>
+        <Link to="/about">About Us</Link>
+        <Link to="/contacts">Contact Us</Link>
+        <Link to="/add-animal">Add Animal</Link>
+        </nav>
+      </div>
+
+      
+    
       <Search getSearch={fetchSearch}/>
       <label className="filter">
   Choose Animal by breed:
+  {/* here this is the drop down with the breeds available */}
   <select value={selectedBreed} onChange={handleBreed} className="select">
     {allBreeds.map((breed) => (
       <option key={breed} value={breed}>
@@ -123,10 +151,7 @@ function Home(){
   </select>
 </label>
 
-<ul>
-        <li><Link to="/about">About Us</Link></li>
-        <li><Link to="/contacts">Contact Us</Link></li>
-</ul>
+
 <div className="animal-container" >
     {/* Filter animals based on breed */}
     {animals  
@@ -139,14 +164,13 @@ function Home(){
             <h3>NAME: {animal.name}</h3>
             <h3>BREED: {animal.breed}</h3>
             <h3>AGE: {animal.age}</h3>
-            {/* {showDetails && (<div className="showdetails"> */}
             <h3>GENDER: {animal.gender}</h3>
             <h3>SIZE: {animal.size}</h3>
             <h3>WEIGHT: {animal.weight}</h3>
             <h3>PERSONALITY: {animal.personality}</h3>
             <h3>HEALTH:{animal.healthStatus}</h3>
             <h3>STATUS: {animal.AvailabilityStatus}</h3>
-            {/* </div>)} */}
+           
             <button type="submit" onClick={() => handleBuy(animal.id)}>
               Buy
             </button>
@@ -155,19 +179,20 @@ function Home(){
             <button onClick={() => handleLike(animal.id)}>
                       {`Like (${animal.likes})`}
                         </button>
+            
+            <Link to={`/${animal.id}`}>ShowMore</Link>
+            
         
-             {/* <button onClick={()=>handleShowDetails(animal.id)}>
-                {showDetails ? "Show Less" : "Show More"}
-              </button> */}
+            
           </div>
         );
       })}
   </div>
 
-  <AddAnimal animals={animals} setAnimals={setAnimals}/>
   
- <UpdateAnimal animals={animals} setAnimals={setAnimals} />
-  <footer>All rights reserved@2023</footer>
+ 
+  
+</div>
 </div>
 );
 }

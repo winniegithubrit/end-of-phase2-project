@@ -11,12 +11,7 @@ header{
   color: #fff;
 }
 
-footer{
-    text-align: center;
-    background-color: #222;
-    font-size: 50px;
-    color: #fff;
-}
+
 
 .search{
   float: right;
@@ -88,6 +83,7 @@ footer{
   border-radius: 5px;
   border: none;
   margin-bottom: 10px;
+  height: 20%;
 }
 
 .animal-form button[type="submit"] {
@@ -243,3 +239,92 @@ button[type="submit"]:hover {
   }
 }
 
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.light {
+  background-color: #e4d9d9;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.dark {
+  background-color: #030000;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+.addanimals{
+  background-color: rgb(0, 255, 221)
+}
+nav {
+  margin: 23px auto 0;
+  position: relative;
+  width: 400px;
+  
+  font-size: 57px;
+  display: flex;
+  max-width: max-content;
+}
+nav a {
+  padding: 19px;
+  height: 50%;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: centre;
+  color: rgb(179, 29, 29);
+  cursor: pointer;
+  
+
+}
