@@ -15,16 +15,16 @@
       "likes": 1
     },
     {
-      "name": "Wendy",
+      "name": "Leslie",
       "breed": "Cat",
       "age": "2",
       "gender": "Female",
       "size": "2",
-      "weight": "22lbs",
-      "personality": "Very friendly and smiley",
-      "healthStatus": "Healthy",
+      "weight": "33kgs",
+      "personality": "friendly",
+      "healthStatus": "healthy",
       "AvailabilityStatus": "Available",
-      "image": "https://imageservice.disco.peacocktv.com/uuid/09021e64-1b56-3419-ade6-2c6b8a91e84f/SCENE_3_4?language=eng&territory=US&version=b599eab3-c2c9-3dc0-b39c-a673d095000f",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4nkl1tS31qyERIjCpm_WqHwLNGMC7TF8xCQ&usqp=CAU",
       "likes": "2",
       "id": 3
     },
@@ -279,6 +279,14 @@
       "AvailabilityStatus": "Available",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1200x630_center,f_auto,q_auto:best/newscms/2019_03/1403289/boo-worlds-cutest-dog-today-190119-main-01.jpg",
       "likes": 2
+    }
+  ],
+  "messages": [
+    {
+      "name": "winnie",
+      "email": "winniejomo17@gmail.com",
+      "message": "good work",
+      "id": 1
     }
   ]
 }
