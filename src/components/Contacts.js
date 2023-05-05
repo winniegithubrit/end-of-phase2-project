@@ -45,7 +45,7 @@ function Contacts(){
      <nav>
       {/* the links for navigation */}
         <Link to="/about">About Us</Link>
-        <Link to="/Home">Home</Link>
+        <Link exact to="/">Home</Link>
         <Link to="/add-animal">Add Animal</Link>
         </nav>
     <form className="addanimals" onSubmit={handleSubmit}>

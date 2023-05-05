@@ -10,7 +10,7 @@ function About(){
        <nav>
         <Link to="/add-animal">Add Animal</Link>
         <Link to="/contacts">Contact Us</Link>
-        <Link to="/home">Home</Link>
+        <Link exact to="/">Home</Link>
         </nav>
    {/* A BRIEF HISTORY ABOUT THE ANIMAL APP */}
     <h4 text align="center">The Pet Kingdom Ltd company started in 2007 under Sir Jacob Black.<br></br>

@@ -15,7 +15,7 @@ function App() {
      {/* THE DIFFERENT ROUTES AVAILABLE THAT WILL GIVE ACCESS TO THE PAGES */}
       <Router>
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contacts" component={Contacts} />
           <Route path="/add-animal" component={AddAnimal }/> 

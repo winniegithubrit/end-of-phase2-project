@@ -71,7 +71,7 @@ fetch("http://localhost:3000/animals",{
        <nav>
         <Link to="/about">About</Link>
         <Link to="/contacts">Contact Us</Link>
-        <Link to="/home">Home</Link>
+        <Link exact to="/">Home</Link>
         </nav>
 <form className="animal-form">
   <h5>ADD-ANIMAL-HERE</h5>

@@ -54,7 +54,7 @@ function ShowDetails(){
        <nav>
         <Link to="/about">About Us</Link>
         <Link to="/contacts">Contact Us</Link>
-        <Link to="/home">Home</Link>
+        <Link exact to="/">Home</Link>
         </nav>
 <form className="animal-form" onSubmit={handleSubmit}>
   <h5>UPDATE ANIMAL </h5>
