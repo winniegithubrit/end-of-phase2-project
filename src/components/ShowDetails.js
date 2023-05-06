@@ -36,7 +36,7 @@ function ShowDetails(){
   likes:formData.likes,
 };
 // send a Put request to the server with the new animal data
-      fetch(`http://localhost:3000/animals/${id}`,{
+      fetch(`https://animalss.onrender.com/animals/${id}`,{
   method:"PUT",
   headers: {
     "Content-Type":"application/json",

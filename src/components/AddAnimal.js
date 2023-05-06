@@ -35,7 +35,7 @@ const newAnimal ={
   likes:formData.likes,
 };
 // send a POST request to the server with the new animal data
-fetch("http://localhost:3000/animals",{
+fetch("https://animalss.onrender.com/animals",{
   method:"POST",
   headers: {
     "Content-Type":"application/json",

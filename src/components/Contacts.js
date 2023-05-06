@@ -21,7 +21,7 @@ function Contacts(){
       message:message,
     }
     //adding a new message to the history
-      fetch("http://localhost:3000/messages",{
+      fetch("https://animalss.onrender.com/messages",{
       method: "POST",
       headers:{
         "Content-Type":"application/json"

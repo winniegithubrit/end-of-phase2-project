@@ -22,7 +22,7 @@ function Home(){
  
   useEffect(() => {
     // fetch animals data
-    fetch("http://localhost:3000/animals")
+    fetch("https://animalss.onrender.com/animals")
       .then((response) => response.json())
       .then((data) =>
         setAnimals(
@@ -40,7 +40,7 @@ function Home(){
   };
   //the function that handles the delete functionality per animal card thats why we have specified the id
   function handleDelete(id){
-    fetch(`http://localhost:3000/animals/${id}`,{
+    fetch(`https://animalss.onrender.com/animals/${id}`,{
       method:"DELETE",
     })
     .then(()=>{
@@ -56,7 +56,7 @@ function Home(){
   function handleBuy(id) {
     const animal = animals.find(animal => animal.id === id);
 
-    fetch(`http://localhost:3000/animals/${id}`, {
+    fetch(`https://animalss.onrender.com/animals/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -89,7 +89,7 @@ function Home(){
   function handleLike(id) {
     const animal = animals.find((animal) => animal.id === id);
 
-    fetch(`http://localhost:3000/animals/${id}`, {
+    fetch(`https://animalss.onrender.com/animals/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
